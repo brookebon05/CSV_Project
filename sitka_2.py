@@ -27,7 +27,6 @@ for row in csv_file:
     converted_date = datetime.strptime(row[2], "%Y-%m-%d")
     dates.append(converted_date)
 
-# print(highs)
 
 fig = plt.figure()
 

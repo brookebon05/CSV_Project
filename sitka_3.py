@@ -50,3 +50,10 @@ plt.fill_between(
 )
 
 plt.show()
+
+# plot two charts in the same window (subplots)
+fig2, a = plt.subplots(2)
+a[0].plot(dates, highs, c="red")
+a[1].plot(dates, lows, c="blue")
+
+plt.show()

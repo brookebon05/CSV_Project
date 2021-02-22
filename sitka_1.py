@@ -17,7 +17,6 @@ highs = []
 for row in csv_file:
     highs.append(int(row[5]))
 
-# print(highs)
 
 # plot these highs
 plt.plot(highs, c="red")
