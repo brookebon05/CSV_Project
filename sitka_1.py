@@ -21,6 +21,7 @@ for row in csv_file:
 
 # plot these highs
 plt.plot(highs, c="red")
+# plot is a line graph
 plt.title("Daily Temps, July 2018", fontsize=16)
 plt.xlabel("", fontsize=16)
 plt.ylabel("Temp Fahrenheit", fontsize=16)

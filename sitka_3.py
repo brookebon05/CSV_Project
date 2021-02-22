@@ -2,7 +2,7 @@ import csv
 from datetime import datetime
 import matplotlib.pyplot as plt
 
-open_file = open("sitka_weather_07-2018_simple.csv", "r")
+open_file = open("sitka_weather_2018_simple.csv", "r")
 
 csv_file = csv.reader(open_file, delimiter=",")
 
@@ -20,10 +20,12 @@ converted = datetime.strptime(my_date,'%Y-%m-%d')
 """
 
 highs = []
+lows = []
 dates = []
 
 for row in csv_file:
     highs.append(int(row[5]))
+    lows.append(int(row[6]))
     converted_date = datetime.strptime(row[2], "%Y-%m-%d")
     dates.append(converted_date)
 
@@ -33,10 +35,18 @@ fig = plt.figure()
 
 # plot these highs
 plt.plot(dates, highs, c="red")
+plt.plot(dates, lows, c="blue")
 fig.autofmt_xdate()
-plt.title("Daily Temps, July 2018", fontsize=16)
+plt.title("Daily Temps for 2018", fontsize=16)
 plt.xlabel("", fontsize=12)
 plt.ylabel("Temp Fahrenheit", fontsize=12)
 plt.tick_params(axis="both", labelsize=12)
+plt.fill_between(
+    dates,
+    highs,
+    lows,
+    color="blue",  # The outline color
+    alpha=0.1,  # lighter blue
+)
 
 plt.show()
