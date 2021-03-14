@@ -27,3 +27,4 @@ plt.ylabel("Temp Fahrenheit", fontsize=16)
 plt.tick_params(axis="both", which="major", labelsize=16)
 
 plt.show()
+open_file.close()

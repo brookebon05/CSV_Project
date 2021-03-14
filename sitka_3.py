@@ -57,3 +57,4 @@ a[0].plot(dates, highs, c="red")
 a[1].plot(dates, lows, c="blue")
 
 plt.show()
+open_file.close()

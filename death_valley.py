@@ -56,3 +56,4 @@ plt.fill_between(
 )
 
 plt.show()
+open_file.close()
